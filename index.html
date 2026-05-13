@@ -1558,15 +1558,6 @@
     <button class="qa-btn" onclick="openTradeModal()">
       <span class="qa-icon">➕</span> Trade Entry
     </button>
-    <button class="qa-btn" onclick="showPage('checklist')">
-      <span class="qa-icon">✅</span> Pre-Trade Check
-    </button>
-    <button class="qa-btn" onclick="showPage('calculator')">
-      <span class="qa-icon">🧮</span> Lot Calculator
-    </button>
-    <button class="qa-btn" onclick="showPage('market')">
-      <span class="qa-icon">🌐</span> Market & News
-    </button>
     <div class="qa-label" style="margin-top:12px;">Websites</div>
     <a class="qa-btn" href="https://www.investing.com/currencies/forex-options" target="_blank">
       <span class="qa-icon">📋</span> FX Options
@@ -1814,62 +1805,43 @@
 
     <!-- ===== MARKET & NEWS PAGE ===== -->
     <div class="page-section" id="page-market">
-      <div class="section-title">🌐 Market & <span>News Data</span></div>
+      <div class="section-title">🌐 Market & <span>Live Charts</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
 
-      <div class="market-grid">
-        <div class="market-card">
-          <div class="market-card-title">🕐 Sessions — Market Hours</div>
-          <div class="market-card-body">
-            <iframe loading="lazy" src="https://www.tradingview.com/widgetembed/?frameElementId=mkt_hours&symbol=EURUSD&interval=D&hidesidetoolbar=1&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=[]&theme=dark&style=1&timezone=Etc%2FUTC&locale=en"
-              style="width:100%;height:300px;border:none;"></iframe>
-          </div>
+        <div class="chart-card">
+          <div class="chart-title"><span class="chart-title-dot"></span> XAUUSD — Gold</div>
+          <div class="lazy-iframe" data-src="https://www.tradingview.com/widgetembed/?symbol=XAUUSD&interval=60&theme=dark&style=1&locale=en&toolbar_bg=%23141414&hide_side_toolbar=0&allow_symbol_change=0&save_image=0&hideideas=1" style="height:300px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;">Loading...</div>
         </div>
 
-        <div class="market-card">
-          <div class="market-card-title">📰 FX Option Expiries — InvestingLive</div>
-          <div class="market-card-body" style="height:auto;padding:16px;">
-            <div id="il-feed">
-              <div class="empty-state">
-                <div class="empty-state-icon">📡</div>
-                Loading FX orders feed...
-              </div>
-            </div>
-          </div>
+        <div class="chart-card">
+          <div class="chart-title"><span class="chart-title-dot"></span> GBPUSD</div>
+          <div class="lazy-iframe" data-src="https://www.tradingview.com/widgetembed/?symbol=GBPUSD&interval=60&theme=dark&style=1&locale=en&toolbar_bg=%23141414&hide_side_toolbar=0&allow_symbol_change=0&save_image=0&hideideas=1" style="height:300px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;">Loading...</div>
         </div>
-      </div>
 
-      <div class="market-grid">
-        <div class="market-card market-full">
-          <div class="market-card-title">📅 Economic Calendar — Investing.com</div>
-          <div class="market-card-body" style="height:400px;">
-            <div class="lazy-iframe" data-src="https://sslecal2.investing.com?columns=exc_flags,exc_currency,exc_importance,exc_actual,exc_forecast,exc_previous&features=datepicker,timezone&countries=25,32,6,37,72,22,17,39,14,10,35&calType=week&timeZone=8&lang=1" data-extra='frameborder="0" allowtransparency="true"' style="width:100%;height:400px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;background:#fff;">Loading calendar...</div>
-          </div>
+        <div class="chart-card">
+          <div class="chart-title"><span class="chart-title-dot"></span> GBPJPY</div>
+          <div class="lazy-iframe" data-src="https://www.tradingview.com/widgetembed/?symbol=GBPJPY&interval=60&theme=dark&style=1&locale=en&toolbar_bg=%23141414&hide_side_toolbar=0&allow_symbol_change=0&save_image=0&hideideas=1" style="height:300px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;">Loading...</div>
         </div>
-      </div>
 
-      <div class="market-grid">
-        <div class="market-card market-full">
-          <div class="market-card-title">📅 ForexFactory Economic Calendar</div>
-          <div class="market-card-body" style="height:auto;padding:20px;">
-            <p style="color:var(--text2);font-size:13px;margin-bottom:16px;">ForexFactory blocks direct embedding. Click below to open it instantly:</p>
-            <a href="https://www.forexfactory.com/calendar" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:var(--pink);border-radius:10px;color:white;font-weight:700;font-size:13px;text-decoration:none;transition:all 0.2s;">
-              📅 Open ForexFactory Calendar →
-            </a>
-          </div>
+        <div class="chart-card">
+          <div class="chart-title"><span class="chart-title-dot"></span> EURUSD</div>
+          <div class="lazy-iframe" data-src="https://www.tradingview.com/widgetembed/?symbol=EURUSD&interval=60&theme=dark&style=1&locale=en&toolbar_bg=%23141414&hide_side_toolbar=0&allow_symbol_change=0&save_image=0&hideideas=1" style="height:300px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;">Loading...</div>
         </div>
-      </div>
 
-      <div class="market-grid">
-        <div class="market-card market-full">
-          <div class="market-card-title">📊 Live Chart — TradingView</div>
-          <div class="market-card-body" style="height:400px;">
-            <div class="lazy-iframe" data-src="https://www.tradingview.com/widgetembed/?frameElementId=tv_chart&symbol=XAUUSD&interval=60&hidesidetoolbar=0&symboledit=1&saveimage=1&toolbarbg=f1f3f6&studies=[]&theme=dark&style=1&timezone=Etc%2FUTC&locale=en" style="width:100%;height:400px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;">Loading chart...</div>
-          </div>
+        <div class="chart-card">
+          <div class="chart-title"><span class="chart-title-dot"></span> EURJPY</div>
+          <div class="lazy-iframe" data-src="https://www.tradingview.com/widgetembed/?symbol=EURJPY&interval=60&theme=dark&style=1&locale=en&toolbar_bg=%23141414&hide_side_toolbar=0&allow_symbol_change=0&save_image=0&hideideas=1" style="height:300px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;">Loading...</div>
         </div>
+
+        <div class="chart-card">
+          <div class="chart-title"><span class="chart-title-dot"></span> USDJPY</div>
+          <div class="lazy-iframe" data-src="https://www.tradingview.com/widgetembed/?symbol=USDJPY&interval=60&theme=dark&style=1&locale=en&toolbar_bg=%23141414&hide_side_toolbar=0&allow_symbol_change=0&save_image=0&hideideas=1" style="height:300px;display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:12px;">Loading...</div>
+        </div>
+
       </div>
     </div>
 
-    <!-- ===== VAULT PAGE ===== --><!-- ===== VAULT PAGE ===== -->
+        <!-- ===== VAULT PAGE ===== --><!-- ===== VAULT PAGE ===== -->
     <div class="page-section" id="page-vault">
       <div class="vault-header">
         <div class="section-title" style="margin-bottom:0">🗄️ Analysis <span>Vault</span></div>
